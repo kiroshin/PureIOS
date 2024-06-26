@@ -8,7 +8,7 @@ import Foundation
 struct HTTPRandomuserAccess: HTTPGetting {
     private let base: URL = URL(string: "https://randomuser.me/api/")!
     
-    func getAllUser(_ count: Int, retry: Int = 3) async throws -> [User] { do {
+    func getAllUser(_ count: Int, retry: Int) async throws -> [User] { do {
         let url = base.appending(queryItems: [.init(name: "results", value: "\(count)")])
         let (raw, _) = try await getJson(detype: Users.self, url: url)
         return raw.results

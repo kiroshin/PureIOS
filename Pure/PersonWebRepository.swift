@@ -11,7 +11,7 @@ final class PersonWebRepository: PersonWebWork {
     let access = HTTPRandomuserAccess()
     
     func getAllPerson() async throws -> [Person] { do {
-        let raw = try await access.getAllUser(100)
+        let raw = try await access.getAllUser(100, retry: 3)
         return raw.map { $0.toEntity() }
     } catch {
         print("**** ERROR LOGGING: \(error.localizedDescription)")
