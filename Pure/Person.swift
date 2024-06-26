@@ -20,15 +20,17 @@ struct Person: Identifiable {
 
 extension Person {
     func toMeta() -> Meta {
-        return Meta(id: id, name: name, country: country)
+        return Meta(id: id, name: name, age: age, country: country)
     }
     
     struct Meta: Equatable {
         let id: ID
         let name: String
+        let age: Int
         let country: String
     }
 }
+
 
 enum Gender: String {
     case unknown

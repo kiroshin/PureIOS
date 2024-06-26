@@ -18,7 +18,6 @@ struct Roger: Equatable {
 extension Roger {
     struct Sys: Equatable {
         var last: Signal = .ready               // 초기 데이터 로드 여부
-        var count: Int = 0                      // 컨트롤 버튼 누른 횟수
     }
 
     struct Route: Equatable {

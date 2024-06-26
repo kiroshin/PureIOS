@@ -18,12 +18,14 @@ extension StorePublisher where Self.Failure == Never {
     }
 }
 
+
 @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
 extension CurrentValueSubject: StorePublisher where Failure == Never {
     func toStore() -> Store<Output> {
         return Store(self)
     }
 }
+
 
 @available(macOS 11.0, iOS 14.0, tvOS 14.0, watchOS 7.0, *)
 extension Publisher where Self.Failure == Never {

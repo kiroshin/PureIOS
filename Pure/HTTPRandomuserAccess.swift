@@ -19,7 +19,6 @@ struct HTTPRandomuserAccess: HTTPGetting {
         throw error
     } }
     
-    
     struct Users: Codable {
         let results: [User]
     }

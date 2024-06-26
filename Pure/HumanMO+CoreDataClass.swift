@@ -38,6 +38,6 @@ extension HumanMO {
     }
     
     func toMeta() -> Person.Meta {
-        return Person.Meta(id: idnt!, name: name!, country: country!)
+        return Person.Meta(id: idnt!, name: name!, age: Int(age), country: country!)
     }
 }

@@ -7,6 +7,7 @@ import Foundation
 
 typealias UnfairLock = UnsafeMutablePointer<os_unfair_lock>
 
+
 extension UnfairLock {
     static func create() -> UnfairLock {
         let lock = UnfairLock.allocate(capacity: 1)
@@ -27,4 +28,5 @@ extension UnfairLock {
         os_unfair_lock_unlock(self)
     }
 }
+
 

@@ -48,6 +48,7 @@ class MutableStore<Output: Equatable>: Publisher, @unchecked Sendable {
         _state.receive(subscriber: subscriber)
     }
 }
+
 extension MutableStore {
     func update(_ action: @Sendable (inout Output) -> Void) -> Void {
         _lock.lock()
@@ -59,6 +60,7 @@ extension MutableStore {
         _lock.unlock()
     }
 }
+
 extension MutableStore: StorePublisher {
     var value: Output { return _state.value }
     

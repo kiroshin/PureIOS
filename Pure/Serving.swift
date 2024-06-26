@@ -12,5 +12,6 @@ protocol Serving {
     var loadPersonAction: LoadPersonUsecase { get }
 }
 
+
 typealias LoadPersonUsecase = (Person.ID) async throws -> Person
 

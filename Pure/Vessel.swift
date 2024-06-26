@@ -51,8 +51,6 @@ private extension Date {
 }
 
 
-
-
 #if DEBUG
 final class Raft: Serving, @unchecked Sendable {
     private let _state = CurrentValueSubject<Roger, Never>(Roger())

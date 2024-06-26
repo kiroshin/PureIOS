@@ -69,13 +69,14 @@ extension HomeView {
     struct Item: Identifiable {
         let id: Person.ID
         let nick: String
+        let age: Int
         let region: String
     }
 }
 
 private extension HomeView.Item {
     static func from(meta: Person.Meta) -> HomeView.Item {
-        return .init(id: meta.id, nick: meta.name, region: meta.country)
+        return .init(id: meta.id, nick: meta.name, age: meta.age, region: meta.country)
     }
 }
 

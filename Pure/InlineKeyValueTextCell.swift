@@ -22,6 +22,7 @@ struct InlineKeyValueTextCell: View {
     }
 }
 
+
 struct InlineKeyValueTextCell_Previews: PreviewProvider {
     static var previews: some View {
         InlineKeyValueTextCell(key: "KEY", value: "VALUE", fixedKeyWidth: 4 * 20)

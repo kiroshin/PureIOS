@@ -12,15 +12,18 @@ import Foundation
 
 typealias HTTPStatusCode = Int
 
+
 enum HTTPError: Error {
     case webFailed(code: HTTPStatusCode, name: String)
     case networkFailed(reason: String)
     case decodeFailed(reason: String)
 }
 
+
 protocol HTTPAccessing: HTTPGetting, HTTPPosting {}
 protocol HTTPGetting {}
 protocol HTTPPosting {}
+
 
 extension HTTPGetting {
     /// GET 데이터 태스크 제이슨
