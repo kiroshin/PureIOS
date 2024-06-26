@@ -6,7 +6,6 @@
 import Foundation
 import CoreData
 
-
 protocol CoreDataStacking {
     var container: NSPersistentContainer { get }
 }
@@ -84,6 +83,7 @@ extension NSPersistentContainer {
         self.viewContext.automaticallyMergesChangesFromParent = true
     }
 }
+
 
 #if DEBUG
 private extension ProcessInfo {

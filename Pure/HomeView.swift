@@ -6,7 +6,6 @@
 
 import SwiftUI
 
-
 struct HomeView: View {
     private let lastMetasState: Stored<That>
     @State var itemsState: UiState<[Item]> = UiState.ready

@@ -5,7 +5,6 @@
 
 import Foundation
 
-
 typealias UnfairLock = UnsafeMutablePointer<os_unfair_lock>
 
 extension UnfairLock {

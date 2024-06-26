@@ -7,9 +7,9 @@
 import Foundation
 
 extension Vessel {
-    var loadPersonAction: LoadPersonUsecase { return _loadPersonAction }
+    var loadPersonAction: LoadPersonUsecase { return loadPerson }
     
-    private func _loadPersonAction(idnt: Person.ID) async throws -> Person {
+    private func loadPerson(idnt: Person.ID) async throws -> Person {
         if idnt == "" { throw Fizzle.unknown }
         return try await personDBWork.readPerson(id: idnt)
     }

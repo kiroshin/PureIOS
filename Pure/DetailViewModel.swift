@@ -6,7 +6,6 @@
 
 import Foundation
 
-
 extension DetailView {
     @MainActor
     final class ViewModel: ObservableObject {

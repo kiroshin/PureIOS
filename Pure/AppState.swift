@@ -2,12 +2,11 @@
 //  AppState.swift
 //  Created by Kiro Shin <mulgom@gmail.com> on 2024.
 //
-        
+
 
 import Foundation
 
 typealias AppState = Store<Roger>
-
 
 struct Roger: Equatable {
     var sys: Sys = Sys()

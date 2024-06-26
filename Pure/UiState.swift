@@ -5,7 +5,6 @@
 
 import Foundation
 
-
 @frozen enum UiState<T> {
     case ready
     case loading(_ permil: Int)

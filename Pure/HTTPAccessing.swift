@@ -18,11 +18,9 @@ enum HTTPError: Error {
     case decodeFailed(reason: String)
 }
 
-
 protocol HTTPAccessing: HTTPGetting, HTTPPosting {}
 protocol HTTPGetting {}
 protocol HTTPPosting {}
-
 
 extension HTTPGetting {
     /// GET 데이터 태스크 제이슨
@@ -45,7 +43,6 @@ extension HTTPGetting {
     } }
 
 }
-
 
 
 private extension URLRequest {

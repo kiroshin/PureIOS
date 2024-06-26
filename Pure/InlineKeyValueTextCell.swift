@@ -6,7 +6,6 @@
 
 import SwiftUI
 
-
 struct InlineKeyValueTextCell: View {
     let key: String
     let value: String
@@ -22,7 +21,6 @@ struct InlineKeyValueTextCell: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
-
 
 struct InlineKeyValueTextCell_Previews: PreviewProvider {
     static var previews: some View {

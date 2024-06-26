@@ -7,7 +7,6 @@
 import Foundation
 import Combine
 
-
 final class Vessel: MutableStore<Roger>, Serving {
     var appState: AppState { toStore() }
     let personDBWork: PersonDBWork = PersonDBRepository()
@@ -18,7 +17,6 @@ final class Vessel: MutableStore<Roger>, Serving {
         loadQuery()
     }
 }
-
 
 private extension Vessel {
     /// 앱 초기 구동 시, 메타 데이터가 비어있으면 다운받아서 저장한 뒤 로드한다.

@@ -5,7 +5,6 @@
 
 import Foundation
 
-
 struct HTTPRandomuserAccess: HTTPGetting {
     private let base: URL = URL(string: "https://randomuser.me/api/")!
     

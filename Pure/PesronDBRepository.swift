@@ -7,7 +7,6 @@
 import Foundation
 import CoreData
 
-
 final class PersonDBRepository: CoreDataStacking {
     private static let sharedPersistence = NSPersistentContainer(store: "Pure")
     var container: NSPersistentContainer { PersonDBRepository.sharedPersistence }
