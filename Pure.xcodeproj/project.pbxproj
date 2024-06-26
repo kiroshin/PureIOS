@@ -13,6 +13,28 @@
 		4843FC202C2B960E000AF0CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4843FC1F2C2B960E000AF0CE /* Preview Assets.xcassets */; };
 		4843FC252C2B960E000AF0CE /* Pure.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC232C2B960E000AF0CE /* Pure.xcdatamodeld */; };
 		4843FC2D2C2B97D8000AF0CE /* Vessel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC2C2C2B97D8000AF0CE /* Vessel.swift */; };
+		4843FC372C2B9B1A000AF0CE /* HumanMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC352C2B9B1A000AF0CE /* HumanMO+CoreDataClass.swift */; };
+		4843FC3A2C2B9B88000AF0CE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC392C2B9B88000AF0CE /* AppState.swift */; };
+		4843FC3C2C2B9BAF000AF0CE /* CoreDataStacking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC3B2C2B9BAF000AF0CE /* CoreDataStacking.swift */; };
+		4843FC3E2C2B9CA8000AF0CE /* HTTPAccessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC3D2C2B9CA8000AF0CE /* HTTPAccessing.swift */; };
+		4843FC402C2B9CBC000AF0CE /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC3F2C2B9CBC000AF0CE /* Store.swift */; };
+		4843FC422C2B9D23000AF0CE /* Store+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC412C2B9D23000AF0CE /* Store+Combine.swift */; };
+		4843FC442C2B9D59000AF0CE /* Store+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC432C2B9D59000AF0CE /* Store+View.swift */; };
+		4843FC462C2B9D6F000AF0CE /* Task+Sleep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC452C2B9D6F000AF0CE /* Task+Sleep.swift */; };
+		4843FC482C2B9D80000AF0CE /* UiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC472C2B9D80000AF0CE /* UiState.swift */; };
+		4843FC4A2C2B9DB5000AF0CE /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC492C2B9DB5000AF0CE /* UnfairLock.swift */; };
+		4843FC4C2C2B9E80000AF0CE /* Serving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC4B2C2B9E80000AF0CE /* Serving.swift */; };
+		4843FC4E2C2B9E89000AF0CE /* Working.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC4D2C2B9E89000AF0CE /* Working.swift */; };
+		4843FC502C2B9EA9000AF0CE /* Fizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC4F2C2B9EA9000AF0CE /* Fizzle.swift */; };
+		4843FC522C2B9EBF000AF0CE /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC512C2B9EBF000AF0CE /* Person.swift */; };
+		4843FC542C2B9ED7000AF0CE /* LoadPersonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC532C2B9ED7000AF0CE /* LoadPersonAction.swift */; };
+		4843FC562C2B9EE8000AF0CE /* PersonWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC552C2B9EE8000AF0CE /* PersonWebRepository.swift */; };
+		4843FC582C2B9EF9000AF0CE /* PesronDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC572C2B9EF9000AF0CE /* PesronDBRepository.swift */; };
+		4843FC5A2C2B9F0D000AF0CE /* HTTPRandomuserAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC592C2B9F0D000AF0CE /* HTTPRandomuserAccess.swift */; };
+		4843FC5C2C2B9F2E000AF0CE /* InlineKeyValueTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC5B2C2B9F2E000AF0CE /* InlineKeyValueTextCell.swift */; };
+		4843FC5E2C2B9F62000AF0CE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC5D2C2B9F62000AF0CE /* HomeView.swift */; };
+		4843FC602C2B9F74000AF0CE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC5F2C2B9F74000AF0CE /* DetailView.swift */; };
+		4843FC622C2B9F89000AF0CE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC612C2B9F89000AF0CE /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +46,28 @@
 		4843FC242C2B960E000AF0CE /* Pure.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pure.xcdatamodel; sourceTree = "<group>"; };
 		4843FC2B2C2B96C2000AF0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4843FC2C2C2B97D8000AF0CE /* Vessel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vessel.swift; sourceTree = "<group>"; };
+		4843FC352C2B9B1A000AF0CE /* HumanMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HumanMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4843FC392C2B9B88000AF0CE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		4843FC3B2C2B9BAF000AF0CE /* CoreDataStacking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStacking.swift; sourceTree = "<group>"; };
+		4843FC3D2C2B9CA8000AF0CE /* HTTPAccessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPAccessing.swift; sourceTree = "<group>"; };
+		4843FC3F2C2B9CBC000AF0CE /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		4843FC412C2B9D23000AF0CE /* Store+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+Combine.swift"; sourceTree = "<group>"; };
+		4843FC432C2B9D59000AF0CE /* Store+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Store+View.swift"; sourceTree = "<group>"; };
+		4843FC452C2B9D6F000AF0CE /* Task+Sleep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Sleep.swift"; sourceTree = "<group>"; };
+		4843FC472C2B9D80000AF0CE /* UiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiState.swift; sourceTree = "<group>"; };
+		4843FC492C2B9DB5000AF0CE /* UnfairLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
+		4843FC4B2C2B9E80000AF0CE /* Serving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serving.swift; sourceTree = "<group>"; };
+		4843FC4D2C2B9E89000AF0CE /* Working.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Working.swift; sourceTree = "<group>"; };
+		4843FC4F2C2B9EA9000AF0CE /* Fizzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fizzle.swift; sourceTree = "<group>"; };
+		4843FC512C2B9EBF000AF0CE /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		4843FC532C2B9ED7000AF0CE /* LoadPersonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPersonAction.swift; sourceTree = "<group>"; };
+		4843FC552C2B9EE8000AF0CE /* PersonWebRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonWebRepository.swift; sourceTree = "<group>"; };
+		4843FC572C2B9EF9000AF0CE /* PesronDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesronDBRepository.swift; sourceTree = "<group>"; };
+		4843FC592C2B9F0D000AF0CE /* HTTPRandomuserAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRandomuserAccess.swift; sourceTree = "<group>"; };
+		4843FC5B2C2B9F2E000AF0CE /* InlineKeyValueTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineKeyValueTextCell.swift; sourceTree = "<group>"; };
+		4843FC5D2C2B9F62000AF0CE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4843FC5F2C2B9F74000AF0CE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		4843FC612C2B9F89000AF0CE /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				4843FC182C2B960C000AF0CE /* MainApp.swift */,
+				4843FC392C2B9B88000AF0CE /* AppState.swift */,
+				4843FC4B2C2B9E80000AF0CE /* Serving.swift */,
+				4843FC4D2C2B9E89000AF0CE /* Working.swift */,
 				4843FC2C2C2B97D8000AF0CE /* Vessel.swift */,
 				4843FC2E2C2B980B000AF0CE /* Model */,
 				4843FC2F2C2B981C000AF0CE /* Screen */,
@@ -83,6 +130,8 @@
 		4843FC2E2C2B980B000AF0CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4843FC4F2C2B9EA9000AF0CE /* Fizzle.swift */,
+				4843FC512C2B9EBF000AF0CE /* Person.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -91,6 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				4843FC1A2C2B960C000AF0CE /* ContentView.swift */,
+				4843FC5D2C2B9F62000AF0CE /* HomeView.swift */,
+				4843FC5F2C2B9F74000AF0CE /* DetailView.swift */,
+				4843FC612C2B9F89000AF0CE /* DetailViewModel.swift */,
 			);
 			name = Screen;
 			sourceTree = "<group>";
@@ -98,6 +150,7 @@
 		4843FC302C2B982C000AF0CE /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				4843FC532C2B9ED7000AF0CE /* LoadPersonAction.swift */,
 			);
 			name = Usecase;
 			sourceTree = "<group>";
@@ -106,6 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				4843FC232C2B960E000AF0CE /* Pure.xcdatamodeld */,
+				4843FC352C2B9B1A000AF0CE /* HumanMO+CoreDataClass.swift */,
+				4843FC552C2B9EE8000AF0CE /* PersonWebRepository.swift */,
+				4843FC572C2B9EF9000AF0CE /* PesronDBRepository.swift */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
@@ -113,6 +169,7 @@
 		4843FC322C2B983F000AF0CE /* Gear */ = {
 			isa = PBXGroup;
 			children = (
+				4843FC592C2B9F0D000AF0CE /* HTTPRandomuserAccess.swift */,
 			);
 			name = Gear;
 			sourceTree = "<group>";
@@ -120,6 +177,7 @@
 		4843FC332C2B9848000AF0CE /* Show */ = {
 			isa = PBXGroup;
 			children = (
+				4843FC5B2C2B9F2E000AF0CE /* InlineKeyValueTextCell.swift */,
 			);
 			name = Show;
 			sourceTree = "<group>";
@@ -127,6 +185,14 @@
 		4843FC342C2B9852000AF0CE /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				4843FC3B2C2B9BAF000AF0CE /* CoreDataStacking.swift */,
+				4843FC3D2C2B9CA8000AF0CE /* HTTPAccessing.swift */,
+				4843FC3F2C2B9CBC000AF0CE /* Store.swift */,
+				4843FC412C2B9D23000AF0CE /* Store+Combine.swift */,
+				4843FC432C2B9D59000AF0CE /* Store+View.swift */,
+				4843FC452C2B9D6F000AF0CE /* Task+Sleep.swift */,
+				4843FC472C2B9D80000AF0CE /* UiState.swift */,
+				4843FC492C2B9DB5000AF0CE /* UnfairLock.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -201,9 +267,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4843FC3C2C2B9BAF000AF0CE /* CoreDataStacking.swift in Sources */,
+				4843FC4A2C2B9DB5000AF0CE /* UnfairLock.swift in Sources */,
 				4843FC252C2B960E000AF0CE /* Pure.xcdatamodeld in Sources */,
+				4843FC5A2C2B9F0D000AF0CE /* HTTPRandomuserAccess.swift in Sources */,
+				4843FC542C2B9ED7000AF0CE /* LoadPersonAction.swift in Sources */,
+				4843FC462C2B9D6F000AF0CE /* Task+Sleep.swift in Sources */,
+				4843FC5C2C2B9F2E000AF0CE /* InlineKeyValueTextCell.swift in Sources */,
 				4843FC2D2C2B97D8000AF0CE /* Vessel.swift in Sources */,
+				4843FC602C2B9F74000AF0CE /* DetailView.swift in Sources */,
+				4843FC622C2B9F89000AF0CE /* DetailViewModel.swift in Sources */,
+				4843FC502C2B9EA9000AF0CE /* Fizzle.swift in Sources */,
+				4843FC522C2B9EBF000AF0CE /* Person.swift in Sources */,
+				4843FC442C2B9D59000AF0CE /* Store+View.swift in Sources */,
+				4843FC582C2B9EF9000AF0CE /* PesronDBRepository.swift in Sources */,
+				4843FC422C2B9D23000AF0CE /* Store+Combine.swift in Sources */,
+				4843FC482C2B9D80000AF0CE /* UiState.swift in Sources */,
+				4843FC402C2B9CBC000AF0CE /* Store.swift in Sources */,
+				4843FC4E2C2B9E89000AF0CE /* Working.swift in Sources */,
+				4843FC562C2B9EE8000AF0CE /* PersonWebRepository.swift in Sources */,
 				4843FC1B2C2B960C000AF0CE /* ContentView.swift in Sources */,
+				4843FC3A2C2B9B88000AF0CE /* AppState.swift in Sources */,
+				4843FC4C2C2B9E80000AF0CE /* Serving.swift in Sources */,
+				4843FC372C2B9B1A000AF0CE /* HumanMO+CoreDataClass.swift in Sources */,
+				4843FC5E2C2B9F62000AF0CE /* HomeView.swift in Sources */,
+				4843FC3E2C2B9CA8000AF0CE /* HTTPAccessing.swift in Sources */,
 				4843FC192C2B960C000AF0CE /* MainApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
