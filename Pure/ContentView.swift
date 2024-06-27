@@ -8,6 +8,7 @@ import SwiftUI
 
 struct ContentView: View {
     let service: Serving
+    
     @State private var stackPath = NavigationPath()
 
     var body: some View {
@@ -22,14 +23,16 @@ private extension ContentView {
         HomeView(appState: service.appState)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) { EditButton() }
-            }
-            .navigationDestination(for: Person.ID.self) { uid in
+            }.navigationDestination(for: Person.ID.self) { uid in
                 detailView(uid: uid)
-            }
+            }.navigationTitle("Home")
     }
     
     @ViewBuilder func detailView(uid: Person.ID) -> some View {
         DetailView(loadPersonAction: service.loadPersonAction, target: uid)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) { EditButton() }
+            }.navigationTitle("Detail")
     }
 }
 

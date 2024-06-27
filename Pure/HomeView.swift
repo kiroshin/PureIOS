@@ -7,24 +7,21 @@
 import SwiftUI
 
 struct HomeView: View {
-    private let lastMetasState: Stored<That>
+    private let rogerThat: Stored<That>
     @State var itemsState: UiState<[Item]> = UiState.ready
     
     init(appState: AppState) {
-        lastMetasState = appState.stored { That(roger: $0) }
+        rogerThat = appState.stored { That(roger: $0) }
     }
     
     var body: some View {
         content
-            .navigationTitle("Home")
             .mxReceive(
-                lastMetasState.map {
-                    switch $0.last {
+                rogerThat.map { switch $0.last {
                     case .success: return UiState.success($0.metas.map { pm in Item.from(meta: pm)})
                     case .failure: return UiState.failure("데이터를 로드할 수 없습니다.")
                     default: return UiState.ready
-                    }
-                }
+                } }
             ) { itemsState = $0 }
     }
     
@@ -42,9 +39,9 @@ private extension HomeView {
         List { ForEach(items) { item in
             NavigationLink(value: item.id) {
                 InlineKeyValueTextCell(
-                    key: item.region,
+                    key: item.generation,
                     value: item.nick,
-                    fixedKeyWidth: 4 * 10
+                    fixedKeyWidth: 4 * 20
                 )
             }
         } }.listStyle(.plain)
@@ -71,6 +68,15 @@ extension HomeView {
         let nick: String
         let age: Int
         let region: String
+        
+        var generation: String { switch age {
+            case 0..<13: return "KID"
+            case 13...19: return "TEEN"
+            case 20..<40: return "YOUTH"
+            case 40..<60: return "MIDDLE"
+            case 60..<70: return "SENIOR"
+            default: return "OLD"
+        } }
     }
 }
 
@@ -87,27 +93,5 @@ private extension HomeView.Item {
 //        HomeView()
 //    }
 //}
-
-
-
-/*  만약에 뷰모델을 만든다면
-extension HomeView {
-    @MainActor
-    final class ViewModel: ObservableObject {
-        @Published var itemsState: UiState<[Item]> = UiState.ready
-        
-        init(_ service: Serving) {
-            let lastMetasState = service.appState.mxFlow { That(roger: $0) }
-            lastMetasState.map {
-                switch $0.last {
-                case .success: return UiState.success($0.metas.map { pm in Item.from(meta: pm)})
-                case .failure: return UiState.failure("데이터를 로드할 수 없습니다.")
-                default: return UiState.ready
-                }
-            }.mxAssign(to: &$itemsState)
-        }
-    }
-}
-*/
 
 

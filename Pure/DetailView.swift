@@ -41,7 +41,6 @@ private extension DetailView {
             Section("Information") {
                 InlineKeyValueTextCell(key: "Name", value: item.name, fixedKeyWidth: 80)
                 InlineKeyValueTextCell(key: "Nick", value: item.username, fixedKeyWidth: 80)
-                InlineKeyValueTextCell(key: "Gender", value: item.gender, fixedKeyWidth: 80)
                 InlineKeyValueTextCell(key: "Email", value: item.email, fixedKeyWidth: 80)
                 InlineKeyValueTextCell(key: "Age", value: String(item.age), fixedKeyWidth: 80)
                 InlineKeyValueTextCell(key: "Region", value: item.country, fixedKeyWidth: 80)
