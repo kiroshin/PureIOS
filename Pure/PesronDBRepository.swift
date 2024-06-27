@@ -17,7 +17,7 @@ extension PersonDBRepository: PersonDBWork {
         let models = try self.readAll(sortKey: \HumanMO.idnt)
         return models.map { $0.toMeta() }
     } catch {
-        throw Fizzle.dbMetaFail
+        throw Fizzle.dbReadError
     } } }
     
     func readPerson(id: Person.ID) async throws -> Person { try await context.perform { do {
@@ -26,7 +26,7 @@ extension PersonDBRepository: PersonDBWork {
         let model = result as! HumanMO
         return model.toEntity()
     } catch {
-        throw Fizzle.dbItemFail
+        throw Fizzle.dbReadError
     } } }
     
     func updateManyPerson(_ persons: [Person]) async throws {

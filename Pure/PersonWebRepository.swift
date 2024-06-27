@@ -15,7 +15,7 @@ final class PersonWebRepository: PersonWebWork {
         return raw.map { $0.toEntity() }
     } catch {
         print("**** ERROR LOGGING: \(error.localizedDescription)")
-        throw Fizzle.webFail
+        throw Fizzle.webGetFail
     } }
 }
 
