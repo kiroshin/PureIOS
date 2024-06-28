@@ -10,9 +10,11 @@ import Foundation
 protocol Serving {
     var appState: AppState { get }
     var loadPersonAction: LoadPersonUsecase { get }
-    var applyIsRegionAction: ApplyIsRegionUsecase { get }
+    var applyRegionAction: ApplyRegionUsecase { get }
+    var moveHereAction: MoveHereUsecase { get }
 }
 
 typealias LoadPersonUsecase = (Person.ID) async throws -> Person
-typealias ApplyIsRegionUsecase = (Bool) async -> Void
+typealias ApplyRegionUsecase = (Bool) async -> Void
+typealias MoveHereUsecase = (Bool, Bool) async throws -> String
 

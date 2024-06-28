@@ -35,7 +35,9 @@
 		4843FC5E2C2B9F62000AF0CE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC5D2C2B9F62000AF0CE /* HomeView.swift */; };
 		4843FC602C2B9F74000AF0CE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC5F2C2B9F74000AF0CE /* DetailView.swift */; };
 		4843FC622C2B9F89000AF0CE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC612C2B9F89000AF0CE /* DetailViewModel.swift */; };
-		4843FC662C2D64B1000AF0CE /* ApplyIsRegionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC652C2D64B0000AF0CE /* ApplyIsRegionAction.swift */; };
+		4843FC662C2D64B1000AF0CE /* ApplyRegionAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC652C2D64B0000AF0CE /* ApplyRegionAction.swift */; };
+		4843FC682C2E97DE000AF0CE /* MoveHereAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC672C2E97DE000AF0CE /* MoveHereAction.swift */; };
+		4843FC6A2C2EA0F4000AF0CE /* CenterCircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4843FC692C2EA0F4000AF0CE /* CenterCircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +71,9 @@
 		4843FC5D2C2B9F62000AF0CE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4843FC5F2C2B9F74000AF0CE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4843FC612C2B9F89000AF0CE /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		4843FC652C2D64B0000AF0CE /* ApplyIsRegionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyIsRegionAction.swift; sourceTree = "<group>"; };
+		4843FC652C2D64B0000AF0CE /* ApplyRegionAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyRegionAction.swift; sourceTree = "<group>"; };
+		4843FC672C2E97DE000AF0CE /* MoveHereAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveHereAction.swift; sourceTree = "<group>"; };
+		4843FC692C2EA0F4000AF0CE /* CenterCircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCircleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				4843FC532C2B9ED7000AF0CE /* LoadPersonAction.swift */,
-				4843FC652C2D64B0000AF0CE /* ApplyIsRegionAction.swift */,
+				4843FC652C2D64B0000AF0CE /* ApplyRegionAction.swift */,
+				4843FC672C2E97DE000AF0CE /* MoveHereAction.swift */,
 			);
 			name = Usecase;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				4843FC5B2C2B9F2E000AF0CE /* InlineKeyValueTextCell.swift */,
+				4843FC692C2EA0F4000AF0CE /* CenterCircleImage.swift */,
 			);
 			name = Show;
 			sourceTree = "<group>";
@@ -272,7 +278,7 @@
 			files = (
 				4843FC3C2C2B9BAF000AF0CE /* CoreDataStacking.swift in Sources */,
 				4843FC4A2C2B9DB5000AF0CE /* UnfairLock.swift in Sources */,
-				4843FC662C2D64B1000AF0CE /* ApplyIsRegionAction.swift in Sources */,
+				4843FC662C2D64B1000AF0CE /* ApplyRegionAction.swift in Sources */,
 				4843FC252C2B960E000AF0CE /* Pure.xcdatamodeld in Sources */,
 				4843FC5A2C2B9F0D000AF0CE /* HTTPRandomuserAccess.swift in Sources */,
 				4843FC542C2B9ED7000AF0CE /* LoadPersonAction.swift in Sources */,
@@ -281,6 +287,7 @@
 				4843FC2D2C2B97D8000AF0CE /* Vessel.swift in Sources */,
 				4843FC602C2B9F74000AF0CE /* DetailView.swift in Sources */,
 				4843FC622C2B9F89000AF0CE /* DetailViewModel.swift in Sources */,
+				4843FC6A2C2EA0F4000AF0CE /* CenterCircleImage.swift in Sources */,
 				4843FC502C2B9EA9000AF0CE /* Fizzle.swift in Sources */,
 				4843FC522C2B9EBF000AF0CE /* Person.swift in Sources */,
 				4843FC442C2B9D59000AF0CE /* Store+View.swift in Sources */,
@@ -294,6 +301,7 @@
 				4843FC3A2C2B9B88000AF0CE /* AppState.swift in Sources */,
 				4843FC4C2C2B9E80000AF0CE /* Serving.swift in Sources */,
 				4843FC372C2B9B1A000AF0CE /* HumanMO+CoreDataClass.swift in Sources */,
+				4843FC682C2E97DE000AF0CE /* MoveHereAction.swift in Sources */,
 				4843FC5E2C2B9F62000AF0CE /* HomeView.swift in Sources */,
 				4843FC3E2C2B9CA8000AF0CE /* HTTPAccessing.swift in Sources */,
 				4843FC192C2B960C000AF0CE /* MainApp.swift in Sources */,

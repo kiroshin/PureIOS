@@ -38,4 +38,9 @@ extension PersonDBRepository: PersonDBWork {
             self.saveContext()
         }
     }
+    
+    func fly(isWing: Bool) async throws -> String {
+        if isWing { return "WING" }
+        throw Fizzle.notFly
+    }
 }

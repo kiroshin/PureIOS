@@ -10,11 +10,15 @@ extension DetailView {
     @MainActor
     final class ViewModel: ObservableObject {
         private let loadPersonAction: LoadPersonUsecase
+        private let moveHereAction: MoveHereUsecase
+        
         @Published var isRegion: Bool = true
         @Published var itemState: UiState<Item> = UiState.ready
+        @Published var moveText: String = "MOVE"
         
         init(_ service: Serving, idnt: Person.ID) {
             self.loadPersonAction = service.loadPersonAction
+            self.moveHereAction = service.moveHereAction
             service.appState.stored(keyPath: \.field.isRegion).give(to: &$isRegion)
             loadPerson(idnt: idnt)
         }
@@ -29,6 +33,14 @@ extension DetailView.ViewModel {
         itemState = UiState.failure(error.localizedDescription)
     } } }
     
+    func moveHere() { Task { do {
+        let isLeg = isRegion
+        let isWing = moveText.count < 4
+        let text = try await moveHereAction(isLeg, isWing)
+        moveText = text
+    } catch {
+        moveText = error.localizedDescription
+    } } }
 }
 
 extension DetailView.ViewModel {

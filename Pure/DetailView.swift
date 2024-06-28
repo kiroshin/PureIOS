@@ -15,7 +15,7 @@ struct DetailView: View {
     
     var body: some View {
         switch viewmodel.itemState {
-        case let .success(item): profileView(item)
+            case let .success(item): profileView(item)
         case let .failure(msg): errorView(msg)
         default: EmptyView()
         }
@@ -25,19 +25,7 @@ struct DetailView: View {
 private extension DetailView {
     func profileView(_ item: ViewModel.Item) -> some View {
         Form {
-            HStack {
-                Spacer()
-                AsyncImage(url: URL(string: item.photo ?? "")) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .clipShape(Circle())
-                } placeholder: {
-                    ProgressView()
-                }.frame(width: 200, height: 200)
-                Spacer()
-            }.listRowBackground(Color.clear)
-            
+            CenterCircleImage(url: item.photo ?? "").listRowBackground(Color.clear)
             Section("Information") {
                 InlineKeyValueTextCell(key: "Name", value: item.name, fixedKeyWidth: 80)
                 InlineKeyValueTextCell(key: "Nick", value: item.username, fixedKeyWidth: 80)
@@ -48,14 +36,11 @@ private extension DetailView {
                 }
                 InlineKeyValueTextCell(key: "Phone", value: item.cellphone, fixedKeyWidth: 80)
             }
-            
-            Button("Other Action") {
-                
+            Button(viewmodel.moveText) {
+                viewmodel.moveHere()
             }
-
         }
         //
-        
     }
     
     func errorView(_ message: String) -> some View {

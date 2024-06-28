@@ -9,7 +9,7 @@ import SwiftUI
 struct ContentView: View {
     let service: Serving
     let isRegionStored: Stored<Bool>
-    let applyRegionAction: ApplyIsRegionUsecase
+    let applyRegionAction: ApplyRegionUsecase
     
     @State private var stackPath = NavigationPath()
     @State private var isRegion: Bool
@@ -17,7 +17,7 @@ struct ContentView: View {
     init(service: Serving) {
         self.service = service
         self.isRegionStored = service.appState.stored(keyPath: \.field.isRegion)
-        self.applyRegionAction = service.applyIsRegionAction
+        self.applyRegionAction = service.applyRegionAction
         self._isRegion = .init(initialValue: service.appState.value.field.isRegion)
         // 그냥 isRegion 기본값을 할당해도 된다. true
     }

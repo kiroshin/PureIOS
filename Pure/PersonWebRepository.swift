@@ -17,6 +17,11 @@ final class PersonWebRepository: PersonWebWork {
         print("**** ERROR LOGGING: \(error.localizedDescription)")
         throw Fizzle.webGetFail
     } }
+    
+    func walk(isLeg: Bool) async throws -> String {
+        if isLeg { return "LEG" }
+        throw Fizzle.walkFail
+    }
 }
 
 
