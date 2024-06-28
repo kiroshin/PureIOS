@@ -34,7 +34,7 @@ extension DetailView.ViewModel {
     } } }
     
     func moveHere(isLeg: Bool) { Task { do {
-        let isWing = moveText.count < 4
+        let isWing = moveText.count < 7
         let text = try await moveHereAction(isLeg, isWing)
         moveText = text
     } catch {
