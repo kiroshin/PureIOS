@@ -52,16 +52,16 @@ private extension Date {
 
 
 #if DEBUG
-final class Raft: Serving, @unchecked Sendable {
-    private let _state = CurrentValueSubject<Roger, Never>(Roger())
-    static let shared = Raft()
-    private init() { }
-    
-    var appState: AppState { _state.toStore() }
-    
-    var loadPersonAction: LoadPersonUsecase { return { idnt in
-        if idnt == "" { throw Fizzle.unknown }
-        return Person(id: "ONE", name: "Jane", username: "jj", gender: .female, email: "j@a.com", age: 19, country: "KO")
-    } }
-}
+//final class Raft: Serving, @unchecked Sendable {
+//    private let _state = CurrentValueSubject<Roger, Never>(Roger())
+//    static let shared = Raft()
+//    private init() { }
+//    
+//    var appState: AppState { _state.toStore() }
+//    
+//    var loadPersonAction: LoadPersonUsecase { return { idnt in
+//        if idnt == "" { throw Fizzle.unknown }
+//        return Person(id: "ONE", name: "Jane", username: "jj", gender: .female, email: "j@a.com", age: 19, country: "KO")
+//    } }
+//}
 #endif

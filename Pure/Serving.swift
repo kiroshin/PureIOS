@@ -10,8 +10,9 @@ import Foundation
 protocol Serving {
     var appState: AppState { get }
     var loadPersonAction: LoadPersonUsecase { get }
+    var ApplyRegionVisibleAction: ApplyRegionVisibleUsecase { get }
 }
 
-
 typealias LoadPersonUsecase = (Person.ID) async throws -> Person
+typealias ApplyRegionVisibleUsecase = (Bool) async -> Void
 

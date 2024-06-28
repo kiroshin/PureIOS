@@ -7,58 +7,75 @@
 import SwiftUI
 
 struct HomeView: View {
-    private let rogerThat: Stored<That>
-    @State var itemsState: UiState<[Item]> = UiState.ready
+    private let thatStored: Stored<That>
+    @State private var isRegion: Bool = true
+    @State private var itemState: UiState<[Item]> = UiState.ready
     
     init(appState: AppState) {
-        rogerThat = appState.stored { That(roger: $0) }
+        thatStored = appState.stored { That(roger: $0) }
     }
     
     var body: some View {
-        content
-            .mxReceive(
-                rogerThat.map { switch $0.last {
-                    case .success: return UiState.success($0.metas.map { pm in Item.from(meta: pm)})
-                    case .failure: return UiState.failure("데이터를 로드할 수 없습니다.")
-                    default: return UiState.ready
-                } }
-            ) { itemsState = $0 }
+        content.mxReceive(thatStored) {
+            isRegion = $0.isRegion
+            switch $0.last {
+                case .success: itemState = UiState.success($0.metas.map { pm in Item.from(meta: pm)})
+                case .failure: itemState = UiState.failure("데이터를 로드할 수 없습니다.")
+                default: itemState = UiState.ready
+            }
+        }
     }
     
     @ViewBuilder private var content: some View {
-        switch itemsState {
-        case let .success(items): loadItemsList(items: items)
-        case let .failure(msg): loadErrorMessage(msg)
-        default: EmptyView()
+        switch itemState {
+            case let .success(items) where isRegion == true: groupListView(items: items)
+            case let .success(items) where isRegion == false: plainListView(items: items)
+            case let .failure(msg): errMessageView(msg)
+            default: EmptyView()
         }
     }
 }
 
 private extension HomeView {
-    func loadItemsList(items: [Item]) -> some View {
-        List { ForEach(items) { item in
-            NavigationLink(value: item.id) {
-                InlineKeyValueTextCell(
-                    key: item.generation,
-                    value: item.nick,
-                    fixedKeyWidth: 4 * 20
-                )
-            }
+    func groupListView(items: [Item]) -> some View {
+        let groupItems = Dictionary(grouping: items) { $0.region }.sorted(by: {$0.key < $1.key})
+        return List { ForEach(groupItems, id: \.key) { key, value in
+            Section(key) { ForEach(value) { item in
+                navLinkedCell(item: item)
+            } }
         } }.listStyle(.plain)
     }
     
-    func loadErrorMessage(_ message: String) -> some View {
+    func plainListView(items: [Item]) -> some View {
+        List { ForEach(items) { item in
+            navLinkedCell(item: item)
+        } }.listStyle(.plain)
+    }
+    
+    func errMessageView(_ message: String) -> some View {
         Text("웁스... \(message)")
+    }
+    
+    func navLinkedCell(item: Item) -> some View {
+        NavigationLink(value: item.id) {
+            InlineKeyValueTextCell(
+                key: item.generation,
+                value: item.nick,
+                fixedKeyWidth: 4 * 20
+            )
+        }
     }
 }
 
 extension HomeView {
     struct That: Equatable {
         let last: Roger.Signal
+        let isRegion: Bool
         let metas: [Person.Meta]
         
         init(roger: Roger) {
             last = roger.sys.last
+            isRegion = roger.field.isRegion
             metas = roger.query.metas
         }
     }

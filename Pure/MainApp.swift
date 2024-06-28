@@ -8,11 +8,11 @@ import SwiftUI
 
 @main
 struct MainApp: App {
-#if DEBUG
-    let service: Serving = ProcessInfo.isPreviewMode ? Raft.shared : Vessel()
-#else
+//#if DEBUG
+//    let service: Serving = ProcessInfo.isPreviewMode ? Raft.shared : Vessel()
+//#else
     let service = Vessel()
-#endif
+//#endif
 
     var body: some Scene {
         WindowGroup {
