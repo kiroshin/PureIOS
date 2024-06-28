@@ -51,6 +51,9 @@ private extension DetailView {
 
 //struct DetailView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        DetailView()
+//        NavigationStack() {
+//            DetailView(Raft.shared, target: "ONE")
+//        }
 //    }
 //}
+

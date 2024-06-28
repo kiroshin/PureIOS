@@ -14,7 +14,7 @@ struct ContentView: View {
     @State private var stackPath = NavigationPath()
     @State private var isRegion: Bool
     
-    init(service: Serving) {
+    init(_ service: Serving) {
         self.service = service
         self.isRegionStored = service.appState.stored(keyPath: \.field.isRegion)
         self.applyRegionAction = service.applyRegionAction
@@ -57,8 +57,10 @@ private extension ContentView {
 }
 
 
+
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ContentView()
+//        ContentView(Raft.shared)
 //    }
 //}
+

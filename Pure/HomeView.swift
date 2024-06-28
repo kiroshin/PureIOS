@@ -107,8 +107,9 @@ private extension HomeView.Item {
 
 //struct HomeView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        HomeView()
+//        NavigationStack() {
+//            HomeView(Raft.shared)
+//        }
 //    }
 //}
-
 

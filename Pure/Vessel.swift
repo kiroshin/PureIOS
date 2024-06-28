@@ -52,16 +52,32 @@ private extension Date {
 
 
 #if DEBUG
-//final class Raft: Serving, @unchecked Sendable {
-//    private let _state = CurrentValueSubject<Roger, Never>(Roger())
-//    static let shared = Raft()
-//    private init() { }
-//    
-//    var appState: AppState { _state.toStore() }
-//    
-//    var loadPersonAction: LoadPersonUsecase { return { idnt in
-//        if idnt == "" { throw Fizzle.unknown }
-//        return Person(id: "ONE", name: "Jane", username: "jj", gender: .female, email: "j@a.com", age: 19, country: "KO")
-//    } }
-//}
+final class Raft: Serving, @unchecked Sendable {
+    private let state = CurrentValueSubject<Roger, Never>(Roger(
+        sys: .init(last: .success),
+        query: .init(metas: [.init(id: "ONE", name: "Jane", age: 19, country: "KO"),
+                             .init(id: "TWO", name: "Mark", age: 20, country: "JP"),
+                             .init(id: "THR", name: "Tom", age: 45, country: "JP"),
+                             .init(id: "FOU", name: "Leo", age: 35, country: "US")])
+    ) )
+    static let shared = Raft()
+    private init() { }
+    
+    var appState: AppState { state.toStore() }
+    
+    var loadPersonAction: LoadPersonUsecase { return { idnt in
+        if idnt == "" { throw Fizzle.unknown }
+        return Person(id: "ONE", name: "Jane", username: "jj", gender: .female, email: "j@a.com", age: 19, country: "KO")
+    } }
+    
+    var applyRegionAction: ApplyRegionUsecase { return { isRegion in
+        var current = self.state.value
+        current.field.isRegion = isRegion
+        self.state.send(current)
+    } }
+    
+    var moveHereAction: MoveHereUsecase { return { (isLeg, isWing) in
+        return "HelloWorld"
+    } }
+}
 #endif
