@@ -10,10 +10,12 @@ extension DetailView {
     @MainActor
     final class ViewModel: ObservableObject {
         private let loadPersonAction: LoadPersonUsecase
+        @Published var isRegion: Bool = true
         @Published var itemState: UiState<Item> = UiState.ready
         
-        init(loadPersonAction: @escaping LoadPersonUsecase, idnt: Person.ID) {
-            self.loadPersonAction = loadPersonAction
+        init(_ service: Serving, idnt: Person.ID) {
+            self.loadPersonAction = service.loadPersonAction
+            service.appState.stored(keyPath: \.field.isRegion).give(to: &$isRegion)
             loadPerson(idnt: idnt)
         }
     }

@@ -9,7 +9,7 @@ import SwiftUI
 struct ContentView: View {
     let service: Serving
     let isRegionStored: Stored<Bool>
-    let ApplyRegionAction: ApplyRegionVisibleUsecase
+    let applyRegionAction: ApplyIsRegionUsecase
     
     @State private var stackPath = NavigationPath()
     @State private var isRegion: Bool
@@ -17,7 +17,7 @@ struct ContentView: View {
     init(service: Serving) {
         self.service = service
         self.isRegionStored = service.appState.stored(keyPath: \.field.isRegion)
-        self.ApplyRegionAction = service.ApplyRegionVisibleAction
+        self.applyRegionAction = service.applyIsRegionAction
         self._isRegion = .init(initialValue: service.appState.value.field.isRegion)
         // 그냥 isRegion 기본값을 할당해도 된다. true
     }
@@ -31,14 +31,14 @@ struct ContentView: View {
         }
         .task(id: isRegion) {
             Swift.print("* Send: \(isRegion)")
-            await ApplyRegionAction(isRegion)
+            await applyRegionAction(isRegion)
         }
     }
 }
 
 private extension ContentView {
     @ViewBuilder func homeView() -> some View {
-        HomeView(appState: service.appState)
+        HomeView(service)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Toggle(isOn: $isRegion, label: { EmptyView() }).toggleStyle(.switch)
@@ -49,7 +49,7 @@ private extension ContentView {
     }
     
     @ViewBuilder func detailView(uid: Person.ID) -> some View {
-        DetailView(loadPersonAction: service.loadPersonAction, target: uid)
+        DetailView(service, target: uid)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Toggle(isOn: $isRegion, label: { EmptyView() }).toggleStyle(.switch)

@@ -9,8 +9,8 @@ import SwiftUI
 struct DetailView: View {
     @StateObject private var viewmodel: ViewModel
     
-    init(loadPersonAction: @escaping LoadPersonUsecase, target: Person.ID) {
-        _viewmodel = StateObject(wrappedValue: ViewModel(loadPersonAction: loadPersonAction, idnt: target))
+    init(_ service: Serving, target: Person.ID) {
+        _viewmodel = StateObject(wrappedValue: ViewModel(service, idnt: target))
     }
     
     var body: some View {
@@ -43,38 +43,15 @@ private extension DetailView {
                 InlineKeyValueTextCell(key: "Nick", value: item.username, fixedKeyWidth: 80)
                 InlineKeyValueTextCell(key: "Email", value: item.email, fixedKeyWidth: 80)
                 InlineKeyValueTextCell(key: "Age", value: String(item.age), fixedKeyWidth: 80)
-                InlineKeyValueTextCell(key: "Region", value: item.country, fixedKeyWidth: 80)
+                if viewmodel.isRegion {
+                    InlineKeyValueTextCell(key: "Region", value: item.country, fixedKeyWidth: 80)
+                }
                 InlineKeyValueTextCell(key: "Phone", value: item.cellphone, fixedKeyWidth: 80)
             }
-//            Button(action: {}, label: {Text("Test")})
-//                .buttonStyle(.plain)
             
-//            Button {
-//                /* */
-//            } label: {
-//                Text("BUTTON")
-//                    .padding()
-//                    .frame(width: 200)
-//                    .background(.blue)
-//                    .cornerRadius(14)
-//            }
-            Section {
-                Button(action: {
-                    //
-                }) {
-                    HStack {
-                        Spacer()
-                        Text("Save")
-                        Spacer()
-                    }
-                }
-                .foregroundColor(.white)
-                .padding(10)
-                .background(Color.accentColor)
-                .cornerRadius(8)
+            Button("Other Action") {
+                
             }
-            
-
 
         }
         //

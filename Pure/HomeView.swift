@@ -11,8 +11,8 @@ struct HomeView: View {
     @State private var isRegion: Bool = true
     @State private var itemState: UiState<[Item]> = UiState.ready
     
-    init(appState: AppState) {
-        thatStored = appState.stored { That(roger: $0) }
+    init(_ service: Serving) {
+        thatStored = service.appState.stored { That(roger: $0) }
     }
     
     var body: some View {

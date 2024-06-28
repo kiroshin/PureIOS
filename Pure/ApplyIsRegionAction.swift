@@ -7,7 +7,7 @@
 import Foundation
 
 extension Vessel {
-    var ApplyRegionVisibleAction: ApplyRegionVisibleUsecase { return setFieldVisible }
+    var applyIsRegionAction: ApplyIsRegionUsecase { return setFieldVisible }
     
     private func setFieldVisible(isRegion: Bool) async -> Void {
         self.update { $0.field.isRegion = isRegion }
