@@ -69,34 +69,4 @@ extension DetailView.ViewModel {
     }
 }
 
-//private extension URL {
-//    init?(photo: String?) {
-//        if let photo = photo {
-//            self.init(string: photo)
-//        }
-//        return nil
-//    }
-//}
 
-
-
-
-
-
-
-
-
-//@State var name: String = ""
-//private let llState: AppState<Roger.Route>
-//
-//init(_ service: Serving) {
-//    lastMetasState = service.appState.mxFlow { That(roger: $0) }
-//    llState = service.appState.mxFlow(keyPath: \.route)
-//}
-
-//    .mxReceive(
-//        llState.map { r in
-//            print("=== 받았다 : \(r) ===")
-//            return r.uis
-//        }
-//    ) { name = $0 }
