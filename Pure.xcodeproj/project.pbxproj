@@ -156,8 +156,8 @@
 		4843FC302C2B982C000AF0CE /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
-				4843FC532C2B9ED7000AF0CE /* LoadPersonAction.swift */,
 				4843FC652C2D64B0000AF0CE /* ApplyRegionAction.swift */,
+				4843FC532C2B9ED7000AF0CE /* LoadPersonAction.swift */,
 				4843FC672C2E97DE000AF0CE /* MoveHereAction.swift */,
 			);
 			name = Usecase;
@@ -166,10 +166,10 @@
 		4843FC312C2B9836000AF0CE /* Worker */ = {
 			isa = PBXGroup;
 			children = (
-				4843FC232C2B960E000AF0CE /* Pure.xcdatamodeld */,
-				4843FC352C2B9B1A000AF0CE /* HumanMO+CoreDataClass.swift */,
 				4843FC552C2B9EE8000AF0CE /* PersonWebRepository.swift */,
 				4843FC572C2B9EF9000AF0CE /* PesronDBRepository.swift */,
+				4843FC352C2B9B1A000AF0CE /* HumanMO+CoreDataClass.swift */,
+				4843FC232C2B960E000AF0CE /* Pure.xcdatamodeld */,
 			);
 			name = Worker;
 			sourceTree = "<group>";
