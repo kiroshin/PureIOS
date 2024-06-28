@@ -65,11 +65,10 @@ extension CoreDataStacking {
 
 
 extension NSPersistentContainer {
-    /// 코어데이터 기본 로컬 컨텍스트
     convenience init(store: String, inMemory: Bool = false) {
         self.init(name: store)
         #if DEBUG
-        let inMemory = ProcessInfo.isPreviewMode  // 프리뷰 모드에서는 강제로 메모리 DB
+        let inMemory = ProcessInfo.isPreviewMode  // force inMemory mode
         #endif
         if inMemory {
             self.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
@@ -79,7 +78,7 @@ extension NSPersistentContainer {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
-        self.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump  // 새로운 오브젝트 기준 병합
+        self.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         self.viewContext.automaticallyMergesChangesFromParent = true
     }
 }

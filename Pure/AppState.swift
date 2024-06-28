@@ -17,20 +17,20 @@ struct Roger: Equatable {
 
 extension Roger {
     struct Sys: Equatable {
-        var last: Signal = .ready               // 초기 데이터 로드 여부
+        var last: Signal = .ready
     }
 
     struct Route: Equatable {
-        var uis: String = ""                    // 마지막 선택 유저 ID
+        var uis: Person.ID = ""
     }
 
     struct Query: Equatable {
-        var metas: [Person.Meta] = []           // 로드한 메타 데이타
+        var metas: [Person.Meta] = []
     }
 
     struct Field: Equatable {
-        var isUsername: Bool = true             // 유저네임 필드 보일지 여부
-        var isRegion: Bool = true               // 지역 보일지 여부
+        var isUsername: Bool = true
+        var isRegion: Bool = true
     }
     
     enum Signal: Int {

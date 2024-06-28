@@ -19,7 +19,6 @@ final class Vessel: MutableStore<Roger>, Serving {
 }
 
 private extension Vessel {
-    /// 앱 초기 구동 시, 메타 데이터가 비어있으면 다운받아서 저장한 뒤 로드한다.
     func loadQuery() { Task { do {
         let appStorage = UserDefaults.standard
         if appStorage.sysLaunchedEpochSec == 0 {

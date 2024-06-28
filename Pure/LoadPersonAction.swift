@@ -10,7 +10,7 @@ extension Vessel {
     var loadPersonAction: LoadPersonUsecase { return loadPerson }
     
     private func loadPerson(idnt: Person.ID) async throws -> Person {
-        if idnt == "" { throw Fizzle.unknown }
+        self.update { $0.route.uis = idnt }
         return try await personDBWork.readPerson(id: idnt)
     }
 }

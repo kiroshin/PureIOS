@@ -20,7 +20,7 @@ struct HomeView: View {
             isRegion = $0.isRegion
             switch $0.last {
                 case .success: itemState = UiState.success($0.metas.map { pm in Item.from(meta: pm)})
-                case .failure: itemState = UiState.failure("데이터를 로드할 수 없습니다.")
+                case .failure: itemState = UiState.failure("Failed to load data!")
                 default: itemState = UiState.ready
             }
         }
@@ -53,7 +53,7 @@ private extension HomeView {
     }
     
     func errMessageView(_ message: String) -> some View {
-        Text("웁스... \(message)")
+        Text("Oops!... \(message)")
     }
     
     func navLinkedCell(item: Item) -> some View {
