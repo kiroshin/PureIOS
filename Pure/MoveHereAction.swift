@@ -11,12 +11,9 @@ extension Vessel {
         let personWebWork = self.personWebWork
         return { (isLeg, isWing) in
             let txtweb = try await personWebWork.walk(isLeg: isLeg)
-            let texdb = try await self.personDBWork.fly(isWing: isWing)
-            return txtweb + texdb
+            let txtdb = try await self.personDBWork.fly(isWing: isWing)
+            return txtweb + txtdb
         }
     }
     
-    private func setFieldVisible(isRegion: Bool) async -> Void {
-        self.update { $0.field.isRegion = isRegion }
-    }
 }

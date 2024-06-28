@@ -37,7 +37,7 @@ private extension DetailView {
                 InlineKeyValueTextCell(key: "Phone", value: item.cellphone, fixedKeyWidth: 80)
             }
             Button(viewmodel.moveText) {
-                viewmodel.moveHere()
+                viewmodel.moveHere(isLeg: viewmodel.isRegion)
             }
         }
         //

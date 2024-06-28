@@ -33,8 +33,7 @@ extension DetailView.ViewModel {
         itemState = UiState.failure(error.localizedDescription)
     } } }
     
-    func moveHere() { Task { do {
-        let isLeg = isRegion
+    func moveHere(isLeg: Bool) { Task { do {
         let isWing = moveText.count < 4
         let text = try await moveHereAction(isLeg, isWing)
         moveText = text
