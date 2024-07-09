@@ -1,88 +1,66 @@
 //
 //  ContentView.swift
-//  Pure
+//  Created by Kiro Shin <mulgom@gmail.com> on 2024.
 //
-//  Created by Kiro on 2024/06/26.
-//
+
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+    let service: Serving
+    let isRegionStored: Stored<Bool>
+    let applyRegionAction: ApplyRegionUsecase
+    
+    @State private var stackPath = NavigationPath()
+    @State private var isRegion: Bool
+    
+    init(_ service: Serving) {
+        self.service = service
+        self.isRegionStored = service.appState.stored(keyPath: \.field.isRegion)
+        self.applyRegionAction = service.applyRegionAction
+        self._isRegion = .init(initialValue: service.appState.value.field.isRegion)
+    }
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
+        NavigationStack(path: $stackPath) {
+            homeView()
+        }.mxReceive(isRegionStored) {
+            Swift.print("* Received: \($0)")
+        }
+        .task(id: isRegion) {
+            Swift.print("* Send: \(isRegion)")
+            await applyRegionAction(isRegion)
+        }
+    }
+}
+
+private extension ContentView {
+    @ViewBuilder func homeView() -> some View {
+        HomeView(service)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                    Toggle(isOn: $isRegion, label: { EmptyView() }).toggleStyle(.switch)
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+            }.navigationDestination(for: Person.ID.self) { uid in
+                detailView(uid: uid)
+            }.navigationTitle("Home")
+    }
+    
+    @ViewBuilder func detailView(uid: Person.ID) -> some View {
+        DetailView(service, target: uid)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Toggle(isOn: $isRegion, label: { EmptyView() }).toggleStyle(.switch)
                 }
-            }
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
+            }.navigationTitle("Detail")
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
+
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView(Raft.shared)
+//    }
+//}
+
