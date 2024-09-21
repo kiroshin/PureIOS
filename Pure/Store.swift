@@ -64,7 +64,7 @@ extension MutableStore {
 extension MutableStore: StorePublisher {
     var value: Output { return _state.value }
     
-    func toStore() -> Store<Output> {
+    func asStore() -> Store<Output> {
         return Store(self)
     }
 }

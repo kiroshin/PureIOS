@@ -8,7 +8,7 @@ import Foundation
 import Combine
 
 final class Vessel: MutableStore<Roger>, Serving {
-    var appState: AppState { toStore() }
+    var appState: AppState { asStore() }
     let personDBWork: PersonDBWork = PersonDBRepository()
     lazy var personWebWork: PersonWebWork = PersonWebRepository()
     
@@ -62,7 +62,7 @@ final class Raft: Serving, @unchecked Sendable {
     static let shared = Raft()
     private init() { }
     
-    var appState: AppState { state.toStore() }
+    var appState: AppState { state.asStore() }
     
     var loadPersonAction: LoadPersonUsecase { return { idnt in
         if idnt == "" { throw Fizzle.unknown }
